@@ -1,1 +1,51 @@
-
+{
+  "cli": {
+    "version": ">= 7.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_BACKEND_URL": "https://YOUR-BACKEND-DOMAIN",
+        "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "303222425968-v3m61c741d7esam2ldgjcpto1g6mipsp.apps.googleusercontent.com",
+        "EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID": "303222425968-ne9m4c63m5e3jvqc7d04cb07shh0s6u1.apps.googleusercontent.com"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease"
+      },
+      "env": {
+        "EXPO_PUBLIC_BACKEND_URL": "https://YOUR-BACKEND-DOMAIN",
+        "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "303222425968-v3m61c741d7esam2ldgjcpto1g6mipsp.apps.googleusercontent.com",
+        "EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID": "303222425968-ne9m4c63m5e3jvqc7d04cb07shh0s6u1.apps.googleusercontent.com"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_BACKEND_URL": "https://YOUR-BACKEND-DOMAIN",
+        "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "303222425968-v3m61c741d7esam2ldgjcpto1g6mipsp.apps.googleusercontent.com",
+        "EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID": "303222425968-ne9m4c63m5e3jvqc7d04cb07shh0s6u1.apps.googleusercontent.com"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./google-play-service-account.json",
+        "track": "internal"
+      }
+    }
+  }
+}
