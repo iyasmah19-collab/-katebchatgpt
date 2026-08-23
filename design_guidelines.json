@@ -1,0 +1,118 @@
+{
+  "theme": "dark",
+  "archetype": "7 (Electric & Neon - Gold Variant)",
+  "global_rules": {
+    "direction": "rtl",
+    "language_toggle": true,
+    "css_strategy": "Use logical properties (e.g., margin-inline-start, padding-inline-end) for all spacing to ensure seamless RTL/LTR switching.",
+    "border_radius": "rounded-2xl for main containers, rounded-xl for inner elements",
+    "transitions": "transition-all duration-300 ease-in-out"
+  },
+  "typography": {
+    "fonts": {
+      "arabic": "'Alexandria', sans-serif",
+      "english": "'Outfit', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "scale": {
+      "h1": "text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight",
+      "h2": "text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight",
+      "h3": "text-xl md:text-2xl font-bold",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm text-muted-foreground",
+      "micro": "text-xs font-mono tracking-widest uppercase"
+    },
+    "rules": {
+      "headings": "Never use default sans for English headings. Ensure tight tracking.",
+      "arabic_legibility": "Avoid extreme opacity on Arabic text. Use solid lighter grays (e.g., text-slate-300) rather than text-white/50.",
+      "alignment": "Left-align in LTR, Right-align in RTL (text-start)."
+    }
+  },
+  "colors": {
+    "background": {
+      "base": "#050505",
+      "surface": "#0F0F13",
+      "surface_hover": "#16161D",
+      "glass": "rgba(5, 5, 5, 0.7)"
+    },
+    "text": {
+      "primary": "#F8FAFC",
+      "secondary": "#A1A1AA",
+      "muted": "#52525B",
+      "inverse": "#050505"
+    },
+    "accent": {
+      "gold": "#FFD700",
+      "amber_neon": "#FFB800",
+      "cyan_glow": "#00E5FF",
+      "danger": "#FF3B30",
+      "success": "#39FF14"
+    },
+    "borders": {
+      "subtle": "rgba(255, 255, 255, 0.08)",
+      "gold_glow": "rgba(255, 215, 0, 0.3)"
+    }
+  },
+  "spacing_and_layout": {
+    "grid_system": "Control Room Grid (Dense, Data Correlation). Base Grid: grid-cols-1 md:grid-cols-3 lg:grid-cols-4. Gap Strategy: gap-6.",
+    "bento_spans": {
+      "main_generator": "col-span-1 md:col-span-2 lg:col-span-3 row-span-2",
+      "sidebar_tools": "col-span-1 row-span-2",
+      "summary_cards": "col-span-1"
+    },
+    "padding": "Generous spacing philosophy. p-6 or p-8 inside cards to prevent text collision."
+  },
+  "surface_styles": {
+    "dashboard_cards": "Flat background (#0F0F13), 1px subtle border (border-white/5). Hover: slight lift (-translate-y-1), border shifts to border-gold/30, subtle gold shadow.",
+    "premium_vault": "The 'Tracing Beam' look. Deep black card with a glowing gold/amber border. Add a subtle radial gradient in the background (bg-gradient-to-br from-amber-500/10 to-transparent).",
+    "header": "Crystal Glass. bg-black/70 backdrop-blur-2xl border-b border-white/10.",
+    "inputs": "Solid dark bg (bg-[#16161D]), 1px subtle border. Focus: ring-2 ring-gold/50 border-gold."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-gradient-to-r from-amber-400 to-amber-500 text-black font-bold hover:brightness-110 shadow-[0_0_15px_rgba(255,184,0,0.4)]",
+      "secondary": "bg-transparent border border-white/10 text-white hover:border-gold/50 hover:text-gold",
+      "ghost": "bg-transparent text-gray-400 hover:text-white hover:bg-white/5"
+    },
+    "shadcn_overrides": {
+      "tabs": "Override h-9 to h-auto. Active tab gets a glowing bottom border (border-b-2 border-gold text-gold).",
+      "select": "Ensure dropdown menu uses rtl direction correctly. bg-[#0F0F13] border-white/10.",
+      "dialog": "Glassmorphism overlay (bg-black/80 backdrop-blur-sm). Dialog box uses surface color with subtle gold border."
+    },
+    "icons": {
+      "library": "lucide-react for UI, react-icons (FaInstagram, FaTiktok, FaYoutube) for platform icons.",
+      "style": "Use dual-tone or glowing accent colors for icons."
+    }
+  },
+  "motion": {
+    "hover": "Scale up slightly (scale-[1.02]), brighten borders.",
+    "page_transition": "Fade and slight slide up (framer-motion).",
+    "content_generation": "Use a subtle pulsing glow on the output container while generating."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "category": "hero_background",
+        "url": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
+        "description": "Dark retro-futuristic texture for premium vault background"
+      },
+      {
+        "category": "abstract_ai",
+        "url": "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1974&auto=format&fit=crop",
+        "description": "Abstract fluid dark/gold gradients for empty states or AI processing overlays"
+      }
+    ]
+  },
+  "testing": {
+    "attributes": "All interactive elements MUST include data-testid. Examples: data-testid='generate-content-btn', data-testid='platform-tiktok', data-testid='dialect-select'."
+  },
+  "instructions_to_main_agent": [
+    "Ensure standard HTML dir='rtl' is applied dynamically based on language state. Default is 'rtl'.",
+    "Install Google Fonts 'Alexandria' and 'Outfit' in index.html or global CSS.",
+    "Implement Shadcn UI heavily but override colors to match the Obsidian/Gold theme.",
+    "Platform Icons (Insta, TikTok, Shorts) MUST use their real brand colors when active, or a gold glow when in the 'Premium Vault' section.",
+    "The 'Secrets Vault' page must look visually distinct from the main generator—darker, more exclusive, utilizing the 'Tracing Beam' border effect.",
+    "Use standard Tailwind logical properties (e.g. ps-4, pe-4, ms-2) instead of pl-4, pr-4 to automatically handle LTR/RTL layout switching.",
+    "For the hook generator and platform secrets, create a bento grid layout with distinct visual hierarchy."
+  ]
+}
