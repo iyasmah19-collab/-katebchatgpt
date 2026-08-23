@@ -1,0 +1,16 @@
+export const theme = {
+  bg: "#050505",
+  surface: "#0f0f13",
+  surfaceHover: "#16161d",
+  text: "#f8fafc",
+  textSecondary: "#a1a1aa",
+  textMuted: "#52525b",
+  gold: "#ffd700",
+  amber: "#ffb800",
+  cyan: "#00e5ff",
+  green: "#39ff14",
+  danger: "#ff3b30",
+  borderSubtle: "rgba(255,255,255,0.08)",
+  borderGold: "rgba(255,215,0,0.3)",
+  card: "#0f0f13",
+};
